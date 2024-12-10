@@ -1,0 +1,1028 @@
+{
+    "version": 1,
+    "models": {},
+    "enums": {
+        "AmplifyAiConversationParticipantRole": {
+            "name": "AmplifyAiConversationParticipantRole",
+            "values": [
+                "user",
+                "assistant"
+            ]
+        }
+    },
+    "nonModels": {
+        "AmplifyAIDocumentBlockSource": {
+            "name": "AmplifyAIDocumentBlockSource",
+            "fields": {
+                "bytes": {
+                    "name": "bytes",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                }
+            }
+        },
+        "AmplifyAIDocumentBlock": {
+            "name": "AmplifyAIDocumentBlock",
+            "fields": {
+                "format": {
+                    "name": "format",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "name": {
+                    "name": "name",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "source": {
+                    "name": "source",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "AmplifyAIDocumentBlockSource"
+                    },
+                    "isRequired": true,
+                    "attributes": []
+                }
+            }
+        },
+        "AmplifyAIImageBlock": {
+            "name": "AmplifyAIImageBlock",
+            "fields": {
+                "format": {
+                    "name": "format",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "source": {
+                    "name": "source",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "AmplifyAIImageBlockSource"
+                    },
+                    "isRequired": true,
+                    "attributes": []
+                }
+            }
+        },
+        "AmplifyAIImageBlockSource": {
+            "name": "AmplifyAIImageBlockSource",
+            "fields": {
+                "bytes": {
+                    "name": "bytes",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                }
+            }
+        },
+        "AmplifyAIToolUseBlock": {
+            "name": "AmplifyAIToolUseBlock",
+            "fields": {
+                "toolUseId": {
+                    "name": "toolUseId",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "name": {
+                    "name": "name",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "input": {
+                    "name": "input",
+                    "isArray": false,
+                    "type": "AWSJSON",
+                    "isRequired": true,
+                    "attributes": []
+                }
+            }
+        },
+        "AmplifyAIToolResultContentBlock": {
+            "name": "AmplifyAIToolResultContentBlock",
+            "fields": {
+                "document": {
+                    "name": "document",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "AmplifyAIDocumentBlock"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "image": {
+                    "name": "image",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "AmplifyAIImageBlock"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "json": {
+                    "name": "json",
+                    "isArray": false,
+                    "type": "AWSJSON",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "text": {
+                    "name": "text",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                }
+            }
+        },
+        "AmplifyAIToolResultBlock": {
+            "name": "AmplifyAIToolResultBlock",
+            "fields": {
+                "content": {
+                    "name": "content",
+                    "isArray": true,
+                    "type": {
+                        "nonModel": "AmplifyAIToolResultContentBlock"
+                    },
+                    "isRequired": true,
+                    "attributes": [],
+                    "isArrayNullable": false
+                },
+                "toolUseId": {
+                    "name": "toolUseId",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "status": {
+                    "name": "status",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                }
+            }
+        },
+        "AmplifyAIContentBlockText": {
+            "name": "AmplifyAIContentBlockText",
+            "fields": {
+                "text": {
+                    "name": "text",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                }
+            }
+        },
+        "AmplifyAIContentBlockImage": {
+            "name": "AmplifyAIContentBlockImage",
+            "fields": {
+                "image": {
+                    "name": "image",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "AmplifyAIImageBlock"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                }
+            }
+        },
+        "AmplifyAIContentBlockDocument": {
+            "name": "AmplifyAIContentBlockDocument",
+            "fields": {
+                "document": {
+                    "name": "document",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "AmplifyAIDocumentBlock"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                }
+            }
+        },
+        "AmplifyAIContentBlockToolUse": {
+            "name": "AmplifyAIContentBlockToolUse",
+            "fields": {
+                "toolUse": {
+                    "name": "toolUse",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "AmplifyAIToolUseBlock"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                }
+            }
+        },
+        "AmplifyAIContentBlockToolResult": {
+            "name": "AmplifyAIContentBlockToolResult",
+            "fields": {
+                "toolResult": {
+                    "name": "toolResult",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "AmplifyAIToolResultBlock"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                }
+            }
+        },
+        "AmplifyAIContentBlock": {
+            "name": "AmplifyAIContentBlock",
+            "fields": {
+                "text": {
+                    "name": "text",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "document": {
+                    "name": "document",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "AmplifyAIDocumentBlock"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "image": {
+                    "name": "image",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "AmplifyAIImageBlock"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "toolResult": {
+                    "name": "toolResult",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "AmplifyAIToolResultBlock"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "toolUse": {
+                    "name": "toolUse",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "AmplifyAIToolUseBlock"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                }
+            }
+        },
+        "AmplifyAIToolConfiguration": {
+            "name": "AmplifyAIToolConfiguration",
+            "fields": {
+                "tools": {
+                    "name": "tools",
+                    "isArray": true,
+                    "type": {
+                        "nonModel": "AmplifyAITool"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true
+                }
+            }
+        },
+        "AmplifyAITool": {
+            "name": "AmplifyAITool",
+            "fields": {
+                "toolSpec": {
+                    "name": "toolSpec",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "AmplifyAIToolSpecification"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                }
+            }
+        },
+        "AmplifyAIToolSpecification": {
+            "name": "AmplifyAIToolSpecification",
+            "fields": {
+                "name": {
+                    "name": "name",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "description": {
+                    "name": "description",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "inputSchema": {
+                    "name": "inputSchema",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "AmplifyAIToolInputSchema"
+                    },
+                    "isRequired": true,
+                    "attributes": []
+                }
+            }
+        },
+        "AmplifyAIToolInputSchema": {
+            "name": "AmplifyAIToolInputSchema",
+            "fields": {
+                "json": {
+                    "name": "json",
+                    "isArray": false,
+                    "type": "AWSJSON",
+                    "isRequired": false,
+                    "attributes": []
+                }
+            }
+        },
+        "AmplifyAIConversationMessageStreamPart": {
+            "name": "AmplifyAIConversationMessageStreamPart",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "owner": {
+                    "name": "owner",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "conversationId": {
+                    "name": "conversationId",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "associatedUserMessageId": {
+                    "name": "associatedUserMessageId",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "contentBlockIndex": {
+                    "name": "contentBlockIndex",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "contentBlockText": {
+                    "name": "contentBlockText",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "contentBlockDeltaIndex": {
+                    "name": "contentBlockDeltaIndex",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "contentBlockToolUse": {
+                    "name": "contentBlockToolUse",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "AmplifyAIToolUseBlock"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "contentBlockDoneAtIndex": {
+                    "name": "contentBlockDoneAtIndex",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "stopReason": {
+                    "name": "stopReason",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "errors": {
+                    "name": "errors",
+                    "isArray": true,
+                    "type": {
+                        "nonModel": "AmplifyAIConversationTurnError"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true
+                }
+            }
+        },
+        "AmplifyAIConversationTurnError": {
+            "name": "AmplifyAIConversationTurnError",
+            "fields": {
+                "message": {
+                    "name": "message",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "errorType": {
+                    "name": "errorType",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                }
+            }
+        }
+    },
+    "conversations": {
+        "chat": {
+            "name": "chat",
+            "models": {
+                "ConversationChat": {
+                    "name": "ConversationChat",
+                    "fields": {
+                        "id": {
+                            "name": "id",
+                            "type": "ID",
+                            "attributes": [],
+                            "isArray": false,
+                            "isRequired": true
+                        },
+                        "name": {
+                            "name": "name",
+                            "type": "String",
+                            "attributes": [],
+                            "isArray": false,
+                            "isRequired": false
+                        },
+                        "metadata": {
+                            "name": "metadata",
+                            "type": "AWSJSON",
+                            "attributes": [],
+                            "isArray": false,
+                            "isRequired": false
+                        },
+                        "messages": {
+                            "name": "messages",
+                            "type": {
+                                "model": "ConversationMessageChat"
+                            },
+                            "attributes": [],
+                            "isArray": true,
+                            "isRequired": false,
+                            "isArrayNullable": true,
+                            "association": {
+                                "connectionType": "HAS_MANY",
+                                "associatedWith": [
+                                    "conversationId"
+                                ]
+                            }
+                        },
+                        "createdAt": {
+                            "name": "createdAt",
+                            "type": "AWSDateTime",
+                            "attributes": [],
+                            "isArray": false,
+                            "isRequired": false,
+                            "isReadOnly": true
+                        },
+                        "updatedAt": {
+                            "name": "updatedAt",
+                            "type": "AWSDateTime",
+                            "attributes": [],
+                            "isArray": false,
+                            "isRequired": false,
+                            "isReadOnly": true
+                        },
+                        "owner": {
+                            "name": "owner",
+                            "type": "String",
+                            "attributes": [],
+                            "isArray": false,
+                            "isRequired": false
+                        }
+                    },
+                    "syncable": true,
+                    "pluralName": "ConversationChats",
+                    "attributes": [
+                        {
+                            "type": "model",
+                            "properties": {
+                                "subscriptions": {
+                                    "level": "off"
+                                },
+                                "mutations": {
+                                    "update": null
+                                }
+                            }
+                        },
+                        {
+                            "type": "auth",
+                            "properties": {
+                                "rules": [
+                                    {
+                                        "provider": "userPools",
+                                        "ownerField": "owner",
+                                        "allow": "owner",
+                                        "identityClaim": "cognito:username",
+                                        "operations": [
+                                            "create",
+                                            "update",
+                                            "delete",
+                                            "read"
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "primaryKeyInfo": {
+                        "isCustomPrimaryKey": false,
+                        "primaryKeyFieldName": "id",
+                        "sortKeyFieldNames": []
+                    }
+                },
+                "ConversationMessageChat": {
+                    "name": "ConversationMessageChat",
+                    "fields": {
+                        "id": {
+                            "name": "id",
+                            "type": "ID",
+                            "attributes": [],
+                            "isArray": false,
+                            "isRequired": true
+                        },
+                        "conversationId": {
+                            "name": "conversationId",
+                            "type": "ID",
+                            "attributes": [],
+                            "isArray": false,
+                            "isRequired": true
+                        },
+                        "conversation": {
+                            "name": "conversation",
+                            "type": {
+                                "model": "ConversationChat"
+                            },
+                            "attributes": [],
+                            "isArray": false,
+                            "isRequired": false,
+                            "association": {
+                                "connectionType": "BELONGS_TO",
+                                "targetNames": [
+                                    "conversationId"
+                                ]
+                            }
+                        },
+                        "role": {
+                            "name": "role",
+                            "type": {
+                                "enum": "AmplifyAIConversationParticipantRole"
+                            },
+                            "attributes": [],
+                            "isArray": false,
+                            "isRequired": false
+                        },
+                        "content": {
+                            "name": "content",
+                            "type": {
+                                "nonModel": "AmplifyAIContentBlock"
+                            },
+                            "attributes": [],
+                            "isArray": true,
+                            "isRequired": false
+                        },
+                        "aiContext": {
+                            "name": "aiContext",
+                            "type": "AWSJSON",
+                            "attributes": [],
+                            "isArray": false,
+                            "isRequired": false
+                        },
+                        "toolConfiguration": {
+                            "name": "toolConfiguration",
+                            "type": {
+                                "nonModel": "AmplifyAIToolConfiguration"
+                            },
+                            "attributes": [],
+                            "isArray": true,
+                            "isRequired": false,
+                            "isArrayNullable": true
+                        },
+                        "createdAt": {
+                            "name": "createdAt",
+                            "type": "AWSDateTime",
+                            "attributes": [],
+                            "isArray": false,
+                            "isRequired": false,
+                            "isReadOnly": true
+                        },
+                        "updatedAt": {
+                            "name": "updatedAt",
+                            "type": "AWSDateTime",
+                            "attributes": [],
+                            "isArray": false,
+                            "isRequired": false,
+                            "isReadOnly": true
+                        }
+                    },
+                    "syncable": true,
+                    "pluralName": "ConversationMessageChats",
+                    "attributes": [
+                        {
+                            "type": "model",
+                            "properties": {
+                                "subscriptions": {}
+                            }
+                        },
+                        {
+                            "type": "auth",
+                            "properties": {
+                                "rules": [
+                                    {
+                                        "provider": "userPools",
+                                        "ownerField": "owner",
+                                        "allow": "owner",
+                                        "identityClaim": "cognito:username",
+                                        "operations": [
+                                            "create",
+                                            "update",
+                                            "delete",
+                                            "read"
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "primaryKeyInfo": {
+                        "isCustomPrimaryKey": false,
+                        "primaryKeyFieldName": "id",
+                        "sortKeyFieldNames": []
+                    }
+                }
+            },
+            "nonModels": {},
+            "enums": {
+                "ConversationParticipantRole": {
+                    "name": "AmplifyAIConversationParticipantRole",
+                    "values": [
+                        "user",
+                        "assistant"
+                    ]
+                }
+            },
+            "conversation": {
+                "modelName": "ConversationChat"
+            },
+            "message": {
+                "modelName": "ConversationMessageChat",
+                "send": {
+                    "name": "chat",
+                    "isArray": false,
+                    "type": {
+                        "model": "ConversationMessageChat"
+                    },
+                    "isRequired": false,
+                    "arguments": {
+                        "conversationId": {
+                            "name": "conversationId",
+                            "isArray": false,
+                            "type": "ID",
+                            "isRequired": true
+                        },
+                        "content": {
+                            "name": "content",
+                            "isArray": true,
+                            "type": {
+                                "input": "AmplifyAIContentBlockInput"
+                            },
+                            "isRequired": false,
+                            "isArrayNullable": true
+                        },
+                        "aiContext": {
+                            "name": "aiContext",
+                            "isArray": false,
+                            "type": "AWSJSON",
+                            "isRequired": false
+                        },
+                        "toolConfiguration": {
+                            "name": "toolConfiguration",
+                            "isArray": false,
+                            "type": {
+                                "input": "AmplifyAIToolConfigurationInput"
+                            },
+                            "isRequired": false
+                        }
+                    }
+                },
+                "subscribe": {
+                    "isArray": false,
+                    "isRequired": false,
+                    "name": "onCreateAssistantResponseChat",
+                    "type": {
+                        "nonModel": "AmplifyAIConversationMessageStreamPart"
+                    },
+                    "arguments": {
+                        "conversationId": {
+                            "name": "conversationId",
+                            "isArray": false,
+                            "isRequired": true,
+                            "type": "ID"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "inputs": {
+        "AmplifyAIDocumentBlockSourceInput": {
+            "name": "AmplifyAIDocumentBlockSourceInput",
+            "attributes": {
+                "bytes": {
+                    "name": "bytes",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false
+                }
+            }
+        },
+        "AmplifyAIDocumentBlockInput": {
+            "name": "AmplifyAIDocumentBlockInput",
+            "attributes": {
+                "format": {
+                    "name": "format",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true
+                },
+                "name": {
+                    "name": "name",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true
+                },
+                "source": {
+                    "name": "source",
+                    "isArray": false,
+                    "type": {
+                        "input": "AmplifyAIDocumentBlockSourceInput"
+                    },
+                    "isRequired": true
+                }
+            }
+        },
+        "AmplifyAIImageBlockSourceInput": {
+            "name": "AmplifyAIImageBlockSourceInput",
+            "attributes": {
+                "bytes": {
+                    "name": "bytes",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false
+                }
+            }
+        },
+        "AmplifyAIImageBlockInput": {
+            "name": "AmplifyAIImageBlockInput",
+            "attributes": {
+                "format": {
+                    "name": "format",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true
+                },
+                "source": {
+                    "name": "source",
+                    "isArray": false,
+                    "type": {
+                        "input": "AmplifyAIImageBlockSourceInput"
+                    },
+                    "isRequired": true
+                }
+            }
+        },
+        "AmplifyAIToolUseBlockInput": {
+            "name": "AmplifyAIToolUseBlockInput",
+            "attributes": {
+                "toolUseId": {
+                    "name": "toolUseId",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true
+                },
+                "name": {
+                    "name": "name",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true
+                },
+                "input": {
+                    "name": "input",
+                    "isArray": false,
+                    "type": "AWSJSON",
+                    "isRequired": true
+                }
+            }
+        },
+        "AmplifyAIToolResultContentBlockInput": {
+            "name": "AmplifyAIToolResultContentBlockInput",
+            "attributes": {
+                "document": {
+                    "name": "document",
+                    "isArray": false,
+                    "type": {
+                        "input": "AmplifyAIDocumentBlockInput"
+                    },
+                    "isRequired": false
+                },
+                "image": {
+                    "name": "image",
+                    "isArray": false,
+                    "type": {
+                        "input": "AmplifyAIImageBlockInput"
+                    },
+                    "isRequired": false
+                },
+                "json": {
+                    "name": "json",
+                    "isArray": false,
+                    "type": "AWSJSON",
+                    "isRequired": false
+                },
+                "text": {
+                    "name": "text",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false
+                }
+            }
+        },
+        "AmplifyAIToolResultBlockInput": {
+            "name": "AmplifyAIToolResultBlockInput",
+            "attributes": {
+                "content": {
+                    "name": "content",
+                    "isArray": true,
+                    "type": {
+                        "input": "AmplifyAIToolResultContentBlockInput"
+                    },
+                    "isRequired": true,
+                    "isArrayNullable": false
+                },
+                "toolUseId": {
+                    "name": "toolUseId",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true
+                },
+                "status": {
+                    "name": "status",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false
+                }
+            }
+        },
+        "AmplifyAIContentBlockInput": {
+            "name": "AmplifyAIContentBlockInput",
+            "attributes": {
+                "text": {
+                    "name": "text",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false
+                },
+                "document": {
+                    "name": "document",
+                    "isArray": false,
+                    "type": {
+                        "input": "AmplifyAIDocumentBlockInput"
+                    },
+                    "isRequired": false
+                },
+                "image": {
+                    "name": "image",
+                    "isArray": false,
+                    "type": {
+                        "input": "AmplifyAIImageBlockInput"
+                    },
+                    "isRequired": false
+                },
+                "toolResult": {
+                    "name": "toolResult",
+                    "isArray": false,
+                    "type": {
+                        "input": "AmplifyAIToolResultBlockInput"
+                    },
+                    "isRequired": false
+                },
+                "toolUse": {
+                    "name": "toolUse",
+                    "isArray": false,
+                    "type": {
+                        "input": "AmplifyAIToolUseBlockInput"
+                    },
+                    "isRequired": false
+                }
+            }
+        },
+        "AmplifyAIToolConfigurationInput": {
+            "name": "AmplifyAIToolConfigurationInput",
+            "attributes": {
+                "tools": {
+                    "name": "tools",
+                    "isArray": true,
+                    "type": {
+                        "input": "AmplifyAIToolInput"
+                    },
+                    "isRequired": false,
+                    "isArrayNullable": true
+                }
+            }
+        },
+        "AmplifyAIToolInput": {
+            "name": "AmplifyAIToolInput",
+            "attributes": {
+                "toolSpec": {
+                    "name": "toolSpec",
+                    "isArray": false,
+                    "type": {
+                        "input": "AmplifyAIToolSpecificationInput"
+                    },
+                    "isRequired": false
+                }
+            }
+        },
+        "AmplifyAIToolSpecificationInput": {
+            "name": "AmplifyAIToolSpecificationInput",
+            "attributes": {
+                "name": {
+                    "name": "name",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true
+                },
+                "description": {
+                    "name": "description",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false
+                },
+                "inputSchema": {
+                    "name": "inputSchema",
+                    "isArray": false,
+                    "type": {
+                        "input": "AmplifyAIToolInputSchemaInput"
+                    },
+                    "isRequired": true
+                }
+            }
+        },
+        "AmplifyAIToolInputSchemaInput": {
+            "name": "AmplifyAIToolInputSchemaInput",
+            "attributes": {
+                "json": {
+                    "name": "json",
+                    "isArray": false,
+                    "type": "AWSJSON",
+                    "isRequired": false
+                }
+            }
+        }
+    }
+}
